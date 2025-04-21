@@ -7,6 +7,7 @@ import Capturados from './Componentes/Capturados';
 import Favoritos from './Componentes/Favoritos';
 import Usuario from './Componentes/Usuario';
 import Menu from './Componentes/Menu';
+import Pokemon from './Componentes/Pokemon';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/capturados" element={<Capturados />} />
         <Route path="/favoritos" element={<Favoritos />} />
         <Route path="/usuario" element={<Usuario />} />
-        <Route path="/Pokemon/:name" element={<Pokemon />} />
+        <Route path="/pokemon/:name" element={<Pokemon />} />
       </Routes>
     </BrowserRouter>
   );
