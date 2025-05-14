@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import './style.css'
 
 function Usuario() {
@@ -7,7 +6,7 @@ function Usuario() {
 
   return (
     <>
-     <h1>Usuario</h1>
+    <h1>Usuario</h1>
     </>
   )
 }

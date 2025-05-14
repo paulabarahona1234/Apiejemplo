@@ -1,29 +1,34 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Importa BrowserRouter y Routes
-import './App.css';
+import { useState, useEffect, useContext } from 'react'
+import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Lista from './Componentes/Lista';
-import Aleatorios from './Componentes/Aleatorios';
-import Capturados from './Componentes/Capturados';
+import Aleatorios from './Componentes/Aleatorios'
+import Capturados from './Componentes/Capturados'
+import Lista from './Componentes/Lista'
+import Pokemon from './Componentes/Pokemon'
+import Usuario from './Componentes/Usuario'
+import Menu from './Componentes/Menu'
 import Favoritos from './Componentes/Favoritos';
-import Usuario from './Componentes/Usuario';
-import Menu from './Componentes/Menu';
-import Pokemon from './Componentes/Pokemon';
+import { AppProvider } from './Contexto/contexto';
 
 function App() {
+
+
   return (
-    <BrowserRouter> {/* BrowserRouter envuelve toda la aplicación */}
-      <Menu />
-      
-      <Routes> {/* Routes maneja las rutas en v6 */}
-        <Route path="/" element={<Lista />} />
+    <AppProvider>
+    <Router>
+      <Menu/>
+      <Routes>
+      <Route path="/" element={<Lista />} />
+        <Route path="/usuarios" element={<Usuario />} />
         <Route path="/aleatorios" element={<Aleatorios />} />
         <Route path="/capturados" element={<Capturados />} />
         <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/usuario" element={<Usuario />} />
-        <Route path="/pokemon/:name" element={<Pokemon />} />
+        <Route path="/pokemon/:name" element={<Pokemon/>} />
       </Routes>
-    </BrowserRouter>
-  );
+    </Router>
+    </AppProvider>
+  )
 }
 
-export default App;
+export default App
